@@ -35,7 +35,6 @@ li {
   list-style: none;
 }
 
-a,
 img,
 input,
 button {
@@ -82,6 +81,7 @@ body {
   font-family: var(--ff-main);
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -100,7 +100,7 @@ main {
   border-radius: 20px;
   border-bottom-right-radius: 210px;
 
-  margin-block: 118px;
+  margin-block-start: 118px;
 }
 
 /* 
@@ -219,6 +219,28 @@ main {
   font-size: clamp(2.81rem, calc(1.87rem + 4.04vw), 5.5rem);
   color: var(--primary);
   letter-spacing: 5px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 118px;
+}
+
+.footer .fe {
+  color: var(--primary);
+}
+
+.footer .fe:hover {
+  text-decoration: underline;
+}
+
+.footer .at {
+  color: var(--primary);
+}
+
+.footer .at:hover {
+  text-decoration: underline;
 }
 
 @media (width <= 600px) {
