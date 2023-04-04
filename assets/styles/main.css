@@ -1,0 +1,258 @@
+:root {
+  --primary: hsl(259, 100%, 65%);
+  --on-primary: hsl(259, 54%, 47%);
+  --light-red: hsl(0, 100%, 67%);
+
+  --background: hsl(0, 0%, 86%);
+  --card-bg: hsl(0, 0%, 100%);
+  --border-color: hsl(0, 0%, 86%);
+  --surface: hsl(0, 1%, 44%);
+  --on-surface: hsl(0, 0%, 8%);
+
+  --ff-main: 'Poppins', sans-serif;
+}
+
+/* 
+  RESET
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+li {
+  list-style: none;
+}
+
+a,
+img,
+input,
+button {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+}
+
+input,
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff-main);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-inline: 20px;
+
+  background-color: var(--background);
+}
+
+main {
+  background-color: var(--card-bg);
+  overflow: hidden;
+
+  width: 100%; /* full stretch */
+  max-width: 838px;
+  padding: 55px;
+  border-radius: 20px;
+  border-bottom-right-radius: 210px;
+
+  margin-block: 118px;
+}
+
+/* 
+  FORM STYLE
+*/
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding-bottom: 45px;
+  margin-bottom: 45px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.form-control {
+  width: 25%;
+}
+
+.form-control label {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--surface);
+  text-transform: uppercase;
+}
+
+.form-control input {
+  font-size: clamp(1.5rem, calc(1.32rem + 0.75vw), 2rem);
+  font-weight: 800;
+
+  margin-top: 5px;
+  padding-inline: 17px;
+  padding-block: 8px;
+
+  outline: none;
+  border-radius: 7px;
+  border: 1px solid var(--border-color);
+}
+
+.form-control input:focus {
+  border: 1px solid var(--primary);
+  caret-color: var(--primary);
+}
+
+.form-control input::-webkit-outer-spin-button,
+.form-control input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-control input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.form-control input::placeholder {
+  font-size: clamp(1.5rem, calc(1.32rem + 0.75vw), 2rem);
+  font-weight: 700;
+}
+
+.form-control .error-message {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--light-red);
+  visibility: hidden;
+}
+
+.form-control.error .error-message {
+  visibility: visible;
+}
+
+.form-control.error input {
+  border: 1px solid var(--light-red);
+}
+
+.form-control.error label {
+  color: var(--light-red);
+}
+
+.form .form-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
+  border-radius: 50%;
+  width: 97px;
+  height: 97px;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translateY(50%);
+  transition: all 100ms ease-in;
+}
+
+.form .form-btn:hover {
+  background-color: var(--on-primary);
+}
+
+.form .form-btn:active {
+  background-color: var(--on-surface);
+}
+
+/* 
+  RESULT STYLE
+*/
+
+.result {
+  font-size: clamp(2.81rem, calc(1.87rem + 4.04vw), 5.5rem);
+  font-weight: 800;
+  font-style: italic;
+}
+
+.result-nums {
+  font-size: clamp(2.81rem, calc(1.87rem + 4.04vw), 5.5rem);
+  color: var(--primary);
+  letter-spacing: 5px;
+}
+
+@media (width <= 600px) {
+  main {
+    border-bottom-right-radius: 100px;
+  }
+
+  .form {
+    gap: 10px;
+  }
+
+  .form-control {
+    width: 30%;
+  }
+
+  .form-control input {
+    padding-inline: 10px;
+  }
+
+  .form .form-btn {
+    width: 64px;
+    height: 64px;
+    right: 50%;
+    bottom: -18%;
+    transform: translateX(50%);
+  }
+}
+
+@media (width <= 500px) {
+  .card {
+    padding: 22px;
+  }
+
+  .form-control .error-message {
+    font-size: 10px;
+  }
+}
