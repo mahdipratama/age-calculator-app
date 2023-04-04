@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - [Solution](https://github.com/mahdipratama/age-calculator-app)
-- [Live version](https://advice-generator-app-65r.pages.dev/)
+- [Live version](https://age-calculator-app.pages.dev/)
 
 ## My process
 
